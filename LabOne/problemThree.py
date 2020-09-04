@@ -27,8 +27,15 @@ def convertSentence(userInput):
         print("Special characters are invalid when creating a variable name.")
         main()
 
+def display_banner():
+	""" Display program name in banner """
+	msg = 'AWSOME camelCaseGenerator PROGRAM'
+	stars = '*' * len(msg)
+	print(f'\n {stars} \n {msg} \n {stars}\n') 
+
 #Grabs and passes userInput to "convertSentence"                
-def main(): 
+def main():
+    display_banner()
     userInput = input("Please enter in a sentence: ")
     convertSentence(userInput.lower())
 
