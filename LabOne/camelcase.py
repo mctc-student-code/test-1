@@ -4,9 +4,10 @@ import re
 #list of special characters
 regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
 
-
 def convertSentence(userInput):
-    if(len(userInput) == 0): 
+    userInput = userInput.strip()
+    
+    if(len(userInput) == 0 or userInput == " "): 
         print("You forgot to type in a sentence.")
         main()
     elif(userInput[0].isdigit()):
@@ -14,17 +15,12 @@ def convertSentence(userInput):
         main()
     #Checks for special characters / Validation
     elif(regex.search(userInput) == None):
-        convertedString = '' 
-        convertedString += userInput[0].lower()
-        for i in range(1, len(userInput)): 
-            if (userInput[i] == ' '): 
-                convertedString += userInput[i + 1].upper() 
-                i += 1
-            elif(userInput[i - 1] != ' '): 
-                convertedString += userInput[i]  
-        print(convertedString)
+        userInput = ''.join(x for x in userInput.title() if x.isalnum())
+        userInput = userInput[0].lower() + userInput[1:]
+        print(userInput)
+        return userInput
     else:
-        print("Special characters are invalid when creating a variable name.")
+        print("Special characters are not allowed. Please type in a new sentence.")
         main()
 
 def display_banner():
@@ -43,4 +39,6 @@ def main():
     userInput = input()
     convertSentence(userInput.lower())
 
-main()
+
+if __name__ == '__main__':
+    main()
