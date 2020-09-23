@@ -73,15 +73,17 @@ def search_record():
         if name.isalpha():
             search_second_name = name.lower()
             break
+    
+    print("\nIf any results are found, they will be listed below.")
 
     search_name = search_first_name + " " + search_second_name
 
-    results = cursor.execute("SELECT * FROM records WHERE name = (?)", search_name)
+    results = cursor.execute("SELECT * FROM records WHERE name = (?)", [search_name])
     print_results = results.fetchall()
-
     for item in print_results:
         print(item)
 
+    print('\n')
     main()
 
 def update_record():
@@ -111,7 +113,7 @@ def update_record():
     update_name = update_first_name + " " + update_second_name
     string_catches = str(add_catches)
 
-    cursor.execute("UPDATE records SET catches = (?) WHERE name = (?", string_catches, update_name)
+    cursor.execute("UPDATE records SET catches = (?) WHERE name = (?)", [string_catches, update_name])
     conn.commit
     print('\n')
 
@@ -135,7 +137,7 @@ def delete_record():
 
     remove_name = remove_first_name + " " + remove_second_name
 
-    cursor.execute("DELETE from records WHERE name = (?)", remove_name)
+    cursor.execute("DELETE from records WHERE name = (?)", [remove_name])
     conn.commit
     print('\n')
     
