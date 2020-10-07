@@ -1,0 +1,16 @@
+2020-10-06 22:14:19,641 - root - WARNING - Please type in a city.
+2020-10-06 22:14:19,641 - root - DEBUG - user has entered invalid data ""
+2020-10-06 22:14:22,800 - root - WARNING - Please type in your states two letter initials.
+2020-10-06 22:14:22,800 - root - DEBUG - user has entered invalid data ""
+2020-10-06 22:14:25,463 - root - WARNING - Please enter in your countries 2-3.
+2020-10-06 22:14:25,463 - root - DEBUG - user has entered invalid data ""
+2020-10-06 22:14:27,028 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2020-10-06 22:14:27,154 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/forecast?q=minneapolis%2Cmn%2Cus&units=imperial&appid=edd928591eb971bbccb48ab5dd07b509 HTTP/1.1" 200 15237
+2020-10-06 22:16:05,135 - root - WARNING - Please type in a city.
+2020-10-06 22:16:05,136 - root - DEBUG - user has entered invalid data ""
+2020-10-06 22:16:08,719 - root - WARNING - Please type in your states two letter initials.
+2020-10-06 22:16:08,719 - root - DEBUG - user has entered invalid data "dawdwa"
+2020-10-06 22:16:16,271 - root - WARNING - Please enter in your countries 2-3.
+2020-10-06 22:16:16,271 - root - DEBUG - user has entered invalid data "dwadwa"
+2020-10-06 22:16:17,972 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2020-10-06 22:16:18,087 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/forecast?q=minneapolis%2Cmn%2Cus&units=imperial&appid=edd928591eb971bbccb48ab5dd07b509 HTTP/1.1" 200 15237
