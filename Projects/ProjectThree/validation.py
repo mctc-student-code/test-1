@@ -8,16 +8,21 @@ regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
 
 def valid_title(title):
     while True:
-        title = input('Enter artwork title: ').strip().title()
+        title = input('Enter artwork title: ').strip()
             
         if not title.replace(' ','').isalpha():
             print("Input was either empty or contained an invalid character, please try again.")
             continue
-        else:
-            title = re.sub(' +', ' ', title)
-            break
+        
+    return standardize_title_format(title)
 
-    return title
+
+def standardize_title_format(title):
+    title = title.strip().title() 
+    title = re.sub(' +', ' ', title)
+    return title 
+
+
 
 def valid_artist(*argv):
     while True:
@@ -68,12 +73,11 @@ def valid_price(price):
     return price
 
 def get_new_artist_info():
-    title = ""
     artist = ""
     email = ""
     price = 0
 
-    title = valid_title(title)
+    title = valid_title()
     artist = valid_artist(artist)
     email = valid_email(email)
     price = valid_price(price)
